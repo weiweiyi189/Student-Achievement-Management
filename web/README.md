@@ -40,6 +40,6 @@ UI库 https://tethys.pingcode.com/components/nav/examples
 
 `git commit -m 提交`  提交两字可换成任意文字， 比如 “登陆页面”， 来表达自己所提交的代码功能
 
-`git push origin main` 提交该代码到仓库中
+`git push origin 7` 提交该代码到仓库中, 7 为自己所在的分支， 请注意替换
 
 之后项目管理人员，进行代码审阅， 如无问题，进行合并
