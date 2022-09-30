@@ -1,0 +1,36 @@
+<thy-layout style="height: 100vh;">
+  <thy-header thySize="sm" class="bg-info">
+    <ng-template #headerTitle></ng-template>
+    <ng-template #headerContent>
+      <thy-nav thyType="thirdly" thyHorizontal="start">
+        <a thyNavItem class="font-size-lg text-white">学生成绩管理系统</a>
+      </thy-nav>
+    </ng-template>
+  </thy-header>
+  <thy-content>
+    <thy-content-main class="offset-sm-3 font-size-md col-6 bg-content ">
+      <div class="mt-3">
+        <thy-card thyDivided="true" class="bg-white">
+          <thy-card-content class="col">
+            <h1 class="text-muted text-center">请登录</h1>
+            <form   class="mt-3">
+              <label class="text-muted">用户名</label>
+
+              <input thyInput name="username"  placeholder="username">
+
+              <label class="text-muted mt-2">密码</label>
+
+              <input thyInput type="password" name="password"
+                     placeholder="password">
+              <div>
+                <button class="mr-2 mt-4" [thyButton]="'primary'"  thyLoadingText="Login">
+                  登录
+                </button>
+              </div>
+            </form>
+          </thy-card-content>
+        </thy-card>
+      </div>
+    </thy-content-main>
+  </thy-content>
+</thy-layout>
