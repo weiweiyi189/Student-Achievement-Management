@@ -23,7 +23,7 @@
               <input thyInput type="password" name="password"
                      placeholder="password">
               <div>
-                <button class="mr-2 mt-4" [thyButton]="'primary'"  thyLoadingText="Login">
+                <button class="mr-2 mt-4" [thyButton]="'primary'" type="button" thyLoadingText="Login" (click)="login()">
                   登录
                 </button>
               </div>
