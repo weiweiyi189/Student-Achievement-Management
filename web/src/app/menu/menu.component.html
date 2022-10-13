@@ -1,0 +1,88 @@
+<thy-layout>
+
+  <thy-header thySize="sm">
+    <ng-template #headerTitle></ng-template>
+    <ng-template #headerContent>
+      <thy-nav thyType="thirdly" thyHorizontal="start">
+        <a thyNavItem class="font-size-lg text-info">学生成绩信息管理系统欢迎您</a>
+      </thy-nav>
+    </ng-template>
+    <ng-template #headerOperation>
+      <thy-nav thyType="thirdly" thyHorizontal="end">
+        <a href="javascript:" thyNavItem>
+          <button [thyButton]="'outline-primary'" [thyActionMenuToggle]="menu" thyContainerClass="primary-menu"
+                  thyOriginActiveClass="active">
+            <thy-avatar thyName="张三" class="" thySize="sm"></thy-avatar>
+            <thy-icon thyIconName="angle-down"></thy-icon>
+          </button>
+          <ng-template #menu>
+
+            <thy-action-menu thyTheme="group">
+              <a thyActionMenuItem [routerLink]="['personal']">
+                <span thyActionMenuItemName class="font-size-md">张三</span>
+                <span thyActionMenuItemMeta class="font-size-md">
+                  <thy-icon thyIconName="user-bold"></thy-icon>
+                </span>
+              </a>
+              <thy-divider></thy-divider>
+
+              <a thyActionMenuItem (click)="logout()">
+                <span thyActionMenuItemName class="font-size-md">注销</span>
+                <span thyActionMenuItemMeta class="font-size-md">
+                  <thy-icon thyIconName="sign-out"></thy-icon>
+                </span>
+              </a>
+            </thy-action-menu>
+          </ng-template>
+        </a>
+      </thy-nav>
+    </ng-template>
+  </thy-header>
+
+  <thy-layout style="height: 100vh;" class="bg-white ">
+    <thy-sidebar [thyWidth]="162">
+      <thy-menu>
+        <a thyMenuItem href="javascript:;">
+            <span thyMenuItemIcon thyTooltip="ServiceArea" thyTooltipPlacement="right">
+            <thy-avatar thyName="S" thySize="xs" class="mr-4"></thy-avatar>
+            </span>
+          首页
+        </a>
+        <a thyMenuItem [routerLink]="'student'">
+            <span thyMenuItemIcon class="ml-1" thyTooltip="学生">
+               <thy-icon thyIconName="user-group"></thy-icon>
+            </span>
+          学生管理
+        </a>
+        <a thyMenuItem [routerLink]="'teacher'">
+            <span thyMenuItemIcon class="ml-1" thyTooltip="教师">
+               <thy-icon thyIconName="user-role"></thy-icon>
+            </span>
+          教师管理
+        </a>
+        <a thyMenuItem [routerLink]="'course'">
+            <span thyMenuItemIcon class="ml-1" thyTooltip="课程">
+               <thy-icon thyIconName="work"></thy-icon>
+            </span>
+          课程管理
+        </a>
+        <a thyMenuItem>
+            <span thyMenuItemIcon class="ml-1">
+               <thy-icon thyIconName="settings">
+               </thy-icon>
+            </span>
+          系统设置
+        </a>
+      </thy-menu>
+    </thy-sidebar>
+    <thy-content style="height: 100vh;" class="bg-white">
+      <!--      <thy-breadcrumb >-->
+      <!--        <thy-breadcrumb-item *ngFor="let route of routers; index as i">-->
+      <!--          <span>{{route}}</span>-->
+      <!--        </thy-breadcrumb-item>-->
+      <!--      </thy-breadcrumb>-->
+      <router-outlet></router-outlet>
+    </thy-content>
+  </thy-layout>
+</thy-layout>
+
