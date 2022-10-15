@@ -1,4 +1,6 @@
-<div class="mt-3">
+<app-student-add *ngIf="component === 'add'" (isFinish)="onAddFinish($event)"></app-student-add>
+
+<div class="mt-3" *ngIf="component === 'index'">
   <thy-card class="bg-white">
     <form >
       <thy-card-header>
@@ -15,7 +17,7 @@
         <ng-template #headerOperation>
           <thy-space>
             <button class="mr-2" thyButton="primary" type="button"><thy-icon thyIconName="print"></thy-icon>导出成绩</button>
-            <button thyButton="success" type="button"><thy-icon thyIconName="plus"></thy-icon>新建</button>
+            <button (click)="component = 'add'" thyButton="success" type="button"><thy-icon thyIconName="plus"></thy-icon>新建</button>
           </thy-space>
         </ng-template>
       </thy-card-header>
@@ -76,7 +78,7 @@
         </button>
         <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="edit"></thy-icon>
-          编辑s
+          编辑
         </button>
         <button thyButton="danger" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="trash"></thy-icon>

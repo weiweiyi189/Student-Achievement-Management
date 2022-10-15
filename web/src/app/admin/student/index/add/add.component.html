@@ -1,0 +1,37 @@
+<div class="mt-2">
+  <button [thyButton]="'outline-default'" [thySize]="'xs'" (click)="backWard()">
+    <thy-icon thyIconName="angle-left"></thy-icon>
+    返回
+  </button>
+</div>
+
+<form name="demoForm" class="px-md-5 p-3  mt-6 mb-2 col-8" >
+  <thy-form-group thyLabelText="姓名" thyLabelRequired thyTipsMode="label">
+    <input thyInput class="ml-4 col-4"  name="name" required
+           placeholder="请输入姓名"/>
+  </thy-form-group>
+  <thy-form-group thyLabelText="性别" thyLabelRequired thyTipsMode="label">
+    <input type="radio"  [value]="false" class="ml-4 mt-1" ><label class="ml-1">男</label>
+    <input type="radio"  [value]="true" class="ml-4 mt-1" ><label class="ml-1">女</label>
+  </thy-form-group>
+  <thy-form-group thyLabelText="学号" thyLabelRequired thyTipsMode="label">
+    <input thyInput class="ml-4 col-4"  name="sno" required
+           placeholder="请输入学号"/>
+  </thy-form-group>
+  <thy-form-group thyLabelText="班级" thyLabelRequired thyTipsMode="label">
+    <thy-custom-select [thyShowSearch]="true"  [thyAllowClear]="true"  class="col-4">
+      <thy-option *ngFor="let option of listOfOption" [thyValue]="option.value" [thyLabelText]="option.description"> </thy-option>
+    </thy-custom-select>
+  </thy-form-group>
+
+  <thy-form-group thyLabelText="专业" thyLabelRequired thyTipsMode="label">
+      <input thyInput class="ml-4 col-4"  name="password" required
+             placeholder="请输入院系专业"/>
+  </thy-form-group>
+
+  <thy-form-group-footer>
+    <button [thyButton]="'primary'" thyLoadingText="" class="ml-4">
+      提交
+    </button>
+  </thy-form-group-footer>
+</form>
