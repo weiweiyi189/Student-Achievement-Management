@@ -1,4 +1,6 @@
-<div class="mt-3">
+<app-student-add *ngIf="component === 'add'" (isFinish)="onAddFinish($event)"></app-student-add>
+
+<div class="mt-3" *ngIf="component === 'index'">
   <thy-card class="bg-white">
     <form >
       <thy-card-header>
@@ -14,7 +16,8 @@
         </ng-template>
         <ng-template #headerOperation>
           <thy-space>
-            <button thyButton="success" type="button"><thy-icon thyIconName="plus"></thy-icon>新建</button>
+            <button class="mr-2" thyButton="primary" type="button"><thy-icon thyIconName="print"></thy-icon>导出成绩</button>
+            <button (click)="component = 'add'" thyButton="success" type="button"><thy-icon thyIconName="plus"></thy-icon>新建</button>
           </thy-space>
         </ng-template>
       </thy-card-header>
@@ -30,6 +33,7 @@
       <th>性别</th>
       <th>学号</th>
       <th>班级</th>
+      <th>专业</th>
       <th>操作</th>
     </tr>
     </thead>
@@ -40,10 +44,11 @@
       <td>男</td>
       <td>205999</td>
       <td>软件201</td>
+      <td>软件工程</td>
       <td>
         <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="eye"></thy-icon>
-          查看成绩
+          详细信息
         </button>
         <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="edit"></thy-icon>
@@ -65,10 +70,11 @@
       <td>男</td>
       <td>205999</td>
       <td>软件201</td>
+      <td>软件工程</td>
       <td>
         <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="eye"></thy-icon>
-          查看成绩
+          详细信息
         </button>
         <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="edit"></thy-icon>
@@ -90,10 +96,11 @@
       <td>男</td>
       <td>205999</td>
       <td>软件201</td>
+      <td>软件工程</td>
       <td>
         <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="eye"></thy-icon>
-          查看成绩
+          详细信息
         </button>
         <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
           <thy-icon thyIconName="edit"></thy-icon>

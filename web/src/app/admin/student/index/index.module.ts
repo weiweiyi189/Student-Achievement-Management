@@ -7,6 +7,7 @@ import {ThyButtonModule} from "ngx-tethys/button";
 import {ThyCardModule} from "ngx-tethys/card";
 import {ThyInputModule} from "ngx-tethys/input";
 import {ThySpaceModule} from "ngx-tethys/space";
+import {AddModule} from "./add/add.module";
 
 
 
@@ -14,14 +15,15 @@ import {ThySpaceModule} from "ngx-tethys/space";
   declarations: [
     IndexComponent
   ],
-  imports: [
-    CommonModule,
-    ThyPaginationModule,
-    ThyIconModule,
-    ThyButtonModule,
-    ThyCardModule,
-    ThyInputModule,
-    ThySpaceModule
-  ]
+    imports: [
+        CommonModule,
+        ThyPaginationModule,
+        ThyIconModule,
+        ThyButtonModule,
+        ThyCardModule,
+        ThyInputModule,
+        ThySpaceModule,
+        AddModule
+    ]
 })
 export class IndexModule { }
