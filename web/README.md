@@ -8,12 +8,12 @@
 
 在web目录下
 
-运行 `ng s` , 运行完后打开 `http://localhost:4200/` 页面
+运行 `ng s` , 运行完后打开 `localhost:4200/` 页面
 
 ## 项目所用环境
 
 
-mysql 5.7  版本目前都行  有问题再说
+mysql 5.7  版本目前都行  ng有问题再说
 
 
 UI库 https://tethys.pingcode.com/components/nav/examples

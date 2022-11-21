@@ -1,0 +1,129 @@
+<app-student-add *ngIf="component === 'add'" (isFinish)="onAddFinish($event)"></app-student-add>
+
+<div class="mt-3" *ngIf="component === 'index'">
+  <thy-card class="bg-white">
+    <form >
+      <thy-card-header>
+        <ng-template #headerDescription>
+          <thy-input-group>
+            <thy-input placeholder="请输入查询姓名" ></thy-input>
+            <ng-template #append>
+              <button thyButton="primary" type="submit">
+                <thy-icon thyIconName="search"></thy-icon>
+              </button>
+            </ng-template>
+          </thy-input-group>
+        </ng-template>
+
+
+        <ng-template #headerOperation>
+          <thy-space>
+            <button class="mr-2" thyButton="primary" type="button"><thy-icon thyIconName="print"></thy-icon>导出成绩</button>
+            <button (click)="component = 'add'" thyButton="success" type="button"><thy-icon thyIconName="plus"></thy-icon>新建</button>
+          </thy-space>
+        </ng-template>
+      </thy-card-header>
+    </form>
+    <thy-card-content>
+    </thy-card-content>
+  </thy-card>
+  <table class="table table-striped mt-2" >
+    <thead>
+    <tr class="table-primary flex-row-reverse">
+      <th>序号</th>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>工号</th>
+      <th>学院</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>张三</td>
+      <td>男</td>
+      <td>205999</td>
+      <td>软件201</td>
+      <td>软件工程</td>
+      <td>
+        <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="eye"></thy-icon>
+          详细信息
+        </button>
+        <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="edit"></thy-icon>
+          编辑
+        </button>
+        <button thyButton="danger" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="trash"></thy-icon>
+          删除
+        </button>
+      </td>
+      <td>
+        <div class="row">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>李四</td>
+      <td>男</td>
+      <td>205999</td>
+      <td>软件201</td>
+      <td>软件工程</td>
+      <td>
+        <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="eye"></thy-icon>
+          详细信息
+        </button>
+        <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="edit"></thy-icon>
+          编辑
+        </button>
+        <button thyButton="danger" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="trash"></thy-icon>
+          删除
+        </button>
+      </td>
+      <td>
+        <div class="row">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>王五</td>
+      <td>男</td>
+      <td>205999</td>
+      <td>软件201</td>
+      <td>软件工程</td>
+      <td>
+        <button  thyButton="success" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="eye"></thy-icon>
+          详细信息
+        </button>
+        <button thyButton="primary" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="edit"></thy-icon>
+          编辑
+        </button>
+        <button thyButton="danger" class="mr-2 " [thySize]="'sm'">
+          <thy-icon thyIconName="trash"></thy-icon>
+          删除
+        </button>
+      </td>
+      <td>
+        <div class="row">
+        </div>
+      </td>
+    </tr>
+  </table>
+  <thy-pagination
+    [(thyPageIndex)]="currentIndex"
+    [thyPageSize]="pageSize"
+    [thyTotal]="200"
+    [thyShowQuickJumper]="false"
+    [thyShowSizeChanger]="true"
+    [thyPageSizeOptions]="[5, 10]"
+  ></thy-pagination>
+</div>
