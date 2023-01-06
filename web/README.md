@@ -26,7 +26,7 @@ UI库 https://tethys.pingcode.com/components/nav/examples
 
 去本项目领取issue，查看该issue对应的分支， 比如 #7。
 
-在webstrom的terminal终端， 使用`git checkout -b #number` number 是该issue对应的分支。
+在webstrom的terminal终端， 使用`git checkout -b number` number 是该issue对应的分支。
 
 然后进行代码开发
 
@@ -47,6 +47,6 @@ UI库 https://tethys.pingcode.com/components/nav/examples
 
 ## 拉取代码步骤
 
-1. `git status` 查看目前自己修改的文件。 若无文件修改，进行第二步。若有文件修改。 则先进行“提交代码步骤的第2,3步”。
+1. `git status` 查看目前自己修改的文件。 若无文件修改，进行第二步。若有文件修改。 则先进行“提交代码步骤的第2,3步”,或者将该文件修改恢复。。
 2. `git fetch --all` 拉取仓库代码
 3. `git merge origin/main` 合并仓库代码
