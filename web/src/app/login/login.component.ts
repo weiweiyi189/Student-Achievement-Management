@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
+  test: any;
 
   constructor(private router: Router) {
   }
